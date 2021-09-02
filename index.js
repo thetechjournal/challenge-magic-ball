@@ -37,44 +37,42 @@ const knowledge = [
     "Having knowledge but lacking the power to express it clearly is no better than never having any ideas at all"
 ]
 
+function removeStylesAdviceEye(){
+        adviceEye.classList.remove('health');
+        adviceEye.classList.remove('knowledge');
+        adviceEye.classList.remove('life');
+        adviceEye.classList.remove('friendship');
+}
+
+function getQuotes(category, quotesArray){
+    document.body.style.backgroundImage = `url('./images/${category}.jpg')`;
+    removeStylesAdviceEye();
+    adviceEye.classList.add(`${category}`);
+    const idx = Math.floor(Math.random() * quotesArray.length);
+    adviceDisplay.textContent = quotesArray[idx];
+}
+
 btnAdvice.addEventListener('click', () => {
     let x = document.getElementById("questions").selectedIndex;
-    if(document.getElementsByTagName("option")[x].value == 'friendship'){
-        document.body.style.backgroundImage = "url('./images/flower-0.jpg')";
-        adviceEye.classList.add('adviceEyeColorFriendship');
-        adviceEye.classList.remove('adviceEyeColorHealth');
-        adviceEye.classList.remove('adviceEyeColorKnowledge');
-        adviceEye.classList.remove('adviceEyeColorLife');
-        const idxLP = Math.floor(Math.random() * friendship.length);
-        adviceDisplay.textContent = friendship[idxLP];
-    }
-    if(document.getElementsByTagName("option")[x].value == 'health'){
-        document.body.style.backgroundImage = "url('./images/flower-1.jpg')";
-        adviceEye.classList.add('adviceEyeColorHealth');
-        adviceEye.classList.remove('adviceEyeColorLife');
-        adviceEye.classList.remove('adviceEyeColorKnowledge');
-        adviceEye.classList.remove('adviceEyeColorFriendship');
-        const idxLP = Math.floor(Math.random() * health.length);
-        adviceDisplay.textContent = health[idxLP];
-    }
-    if(document.getElementsByTagName("option")[x].value == 'life'){
-        document.body.style.backgroundImage = "url('./images/flower-2.jpg')";
-        adviceEye.classList.add('adviceEyeColorLife');
-        adviceEye.classList.remove('adviceEyeColorHealth');
-        adviceEye.classList.remove('adviceEyeColorKnowledge');
-        adviceEye.classList.remove('adviceEyeColorFriendship');
-        const idxLP = Math.floor(Math.random() * life.length);
-        adviceDisplay.textContent = life[idxLP];
-    }
-    if(document.getElementsByTagName("option")[x].value == 'knowledge'){
-        document.body.style.backgroundImage = "url('./images/flower-3.jpg')";
-        adviceEye.classList.add('adviceEyeColorKnowledge');
-        adviceEye.classList.remove('adviceEyeColorHealth');
-        adviceEye.classList.remove('adviceEyeColorLife');
-        adviceEye.classList.remove('adviceEyeColorFriendship');
-        const idxLP = Math.floor(Math.random() * knowledge.length);
-        adviceDisplay.textContent = knowledge[idxLP];
-    }
+    let choice = document.getElementsByTagName("option")[x].value;
+
+    switch(choice) {
+        case 'friendship':
+            getQuotes('friendship', friendship);
+            break;
+        case 'health':
+            getQuotes('health', health);
+            break;
+        case 'life':
+            getQuotes('life', life);
+        break;  
+        case 'knowledge':
+            getQuotes('knowledge', knowledge);
+        break; 
+        default:
+          // code block
+      }
+
 })
 
 
