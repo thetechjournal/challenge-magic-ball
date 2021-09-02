@@ -57,6 +57,7 @@ p {
     clip-path: circle(75%);
     background: lightblue;
     box-shadow: 5px 10px #671D92;
+    color: #671D92;
 }
 
 @keyframes circle {
@@ -71,21 +72,25 @@ p {
 }
 
 .friendship {
+    color: #671D92;
     background: lightblue;
     box-shadow: 5px 10px #671D92;
 }
 
 .health {
+    color: #9F110E;
     background: #a89d8a;
     box-shadow: 5px 10px #9F110E;
 }
 
 .life {
-    background: #419E82;
+    color: #C25D78;
+    background: #89c9b5;
     box-shadow: 5px 10px #C25D78;
 }
 
 .knowledge {
-    background: #579BB4;
-    box-shadow: 5px 10px #EBC6CD;
+    color: #bf3e56;
+    background: #72b3ca;
+    box-shadow: 5px 10px #bf3e56;
 }
