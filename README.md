@@ -3,3 +3,5 @@ Check details [here](https://scrimba.com/learn/weeklychallenge/the-weekly-web-de
 
 ## Published Version:
 * Check published version [here](https://thetechjournal.github.io/challenge-magic-ball/)
+
+![Image](./images/magic-ball.jpg)
